@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+  <link rel="stylesheet" href="feb.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+<!-- ❤️ HEART BACKGROUND -->
+<div id="hearts"></div>
+
+<!-- 🔐 LOGIN -->
+<div id="login" class="card">
+  <h2 class="memories-title"> Only Akash can open this🔐 </h2>
+  <div class="login-gif">
+    <video autoplay muted loop playsinline>
+      <source src="WhatsApp Video 2026-02-13 at 5.02.04 PM.mp4" type="video/mp4">
+    </video>
+  </div>
+  <input type="password" id="password" placeholder="Enter a Special Date💌">
+  <button  class="button1" onclick="login()">Unlock ❤️</button>
+  <p id="error"></p>
+</div>
+
+<!-- 💖 QUESTIONS -->
+<div id="questionBox" class="card hidden">
+  <h1 id="question" class="memories-title">Will you be mine 🥺?</h1>
+  <p class="style">Life is an incredible journey and I want to spend it with you.</p>
+   <div class="login-gif">
+    <video autoplay muted loop playsinline>
+      <source src="WhatsApp Video 2026-02-13 at 4.06.53 PM.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="buttons">
+    <button class="yes" onclick="yes()">YES</button>
+    <button class="no" id="noBtn" onmouseover="moveNo()">NO</button>
+  </div>
+</div>
+
+<!-- 💍 FINAL YES -->
+<div id="finalYes" class="card hidden">
+  <h1 class="memories-title">YAYYY 😍❤️</h1>
+  <p >You are stuck with me forever 💍</p>
+   <div class="login-gif">
+    <video autoplay muted loop playsinline>
+      <source src="WhatsApp Video 2026-02-13 at 4.06.20 PM.mp4" type="video/mp4">
+    </video>
+  </div>
+  <button class="button1" onclick="showValentine()">Next 💖</button>
+</div>
+
+<!-- 💘 VALENTINE -->
+<div id="valentine" class="card hidden">
+  <h1 class="memories-title">Happy Valentine Day Baby! 💘</h1>
+  <p>Every second with you makes my world brighter ✨</p>
+  <div class="login-gif">
+    <video autoplay muted loop playsinline>
+      <source src="WhatsApp Video 2026-02-13 at 4.08.17 PM.mp4" type="video/mp4">
+    </video>
+  </div>
+  <button class="button1" onclick="showGifts()">See My Gifts 🎁</button>
+</div> 
+
+<!-- 🎁 GIFTS -->
+<div id="gifts" class="card hidden">
+  <h1 class="memories-title">Something for You 💕</h1>
+  <div class="gift-box">
+    <button class="gift" onclick="openGift(1)">
+      🎁 Gift 1
+</button>
+    <button class="gift" onclick="openGift(2)">💌 Gift 2</button>
+    <button class="gift" onclick="openGift(3)">🎀 Gift 3</button>
+  </div>
+</div>
+
+<!-- 🧠 QUIZ -->
+<div id="quiz" class="card hidden">
+  <h1 class="memories-title">Quiz for you 😚</h1>
+  <p id="quizQuestion"></p>
+  <div id="options"></div>
+</div>
+
+<!-- 🥰 QUIZ RESULT -->
+<div id="quizResult" class="card hidden">
+  <h1 class="memories-title">Yay! 🥰</h1>
+  <p>You passed the test! You really love me 💞</p>
+  <button class="button1"onclick="showGifts()">← Back</button>
+</div>
+
+<!-- 💌 ENVELOPE LETTER -->
+<div id="envelopePage" class="card hidden">
+  <h1 class="memories-title">For You 💌</h1>
+
+  <div id="envelope" onclick="openEnvelope()">
+    <div class="envelope-top"></div>
+    <div class="envelope-body"></div>
+  </div>
+
+  <div id="letterPaper" class="hidden">
+    <p id="typedLetter"></p>
+  </div>
+
+  <button class="button1" onclick="showGifts()">← Back</button>
+  
+</div>
+
+<!-- 📸 MEMORIES (GIFT 3) -->
+ <!-- 📸 GIFT 3 : MEMORIES -->
+<div id="memories" class="card hidden">
+  <h1 class="memories-title">Look at this cutie 😭</h1>
+
+  <div class="memories-grid">
+    <div class="memory">
+      <img src="WhatsApp Image 2026-02-13 at 3.04.14 PM.jpeg" alt="">
+      <p>Our First Pic</p>
+    </div>
+    <div class="memory">
+      <img src="WhatsApp Image 2026-02-13 at 3.03.20 PM.jpeg" alt="">
+      <p>My Home</p>
+    </div>
+    <div class="memory">
+      <img src="WhatsApp Image 2026-02-13 at 3.03.39 PM.jpeg" alt="">
+      <p>Perfect Day</p>
+    </div>
+    <div class="memory">
+      <img src="WhatsApp Image 2026-02-13 at 3.03.54 PM.jpeg" alt="">
+      <p>Forever Us</p>
+    </div>
+    <div class="memory">
+      <img src="WhatsApp Image 2026-02-13 at 3.05.15 PM.jpeg" alt="">
+      <p>My Cute Baby</p>
+    </div>
+    <div class="memory">
+      <img src="WhatsApp Image 2026-02-13 at 3.17.24 PM.jpeg" alt="">
+      <p>Only Us</p>
+    </div>
+  </div>
+
+  <div style="display:flex; justify-content:space-between;">
+    <button class="button1" onclick="showGifts()">← Back</button>
+   <button  class="button1" onclick="playFinalAnimation(() => { showFinalPage(); })">
+  Finally 💖
+</button>
+
+
+  </div>
+</div>
+<!-- 🌸 FINAL PAGE -->
+<div id="finalPage" class="card hidden scroll-card">
+
+  <h1 class="memories-title">You are my forever ❤️</h1>
+
+  <div class="final-content" class="card hidden">
+    <!-- Video -->
+    <video controls autoplay muted loop>
+      <source src="WhatsApp Video 2026-02-13 at 9.51.58 PM.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
+
+    <p class="final-text">
+      No matter where life takes us,<br>
+      my heart will always choose you 💖
+      I love you more than words can say, and I can't wait to create more beautiful memories together. Happy Valentine's Day, my love! Mere Akashu ❤️....
+    </p>
+  </div>
+
+  <button class="button1" onclick="showGifts()">← Back</button>
+</div>
+<div id="finalOverlay"></div>
+
+
+
+
+<script src="feb.js"></script>
+</body>
+</html>
