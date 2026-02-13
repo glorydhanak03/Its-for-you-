@@ -1,0 +1,398 @@
+body {
+  margin: 0;
+  height: 100vh;
+ background: linear-gradient(180deg, #ffe6ec, #ffd1dc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.card {
+ background: #ffc2d1;  
+  padding: 40px;
+  border-radius: 24px;
+  width: 440px;
+  max-width: 90vw;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.hidden { display: none; }
+
+input {
+  width: 90%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin: 15px 0;
+}
+
+button {
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+
+.yes { background: red; color: white; }
+.no { background: #3b82f6; color: white; position: relative; }
+
+.gift-box {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.gift {
+  background: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  width: 900px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.gift:hover { transform: scale(1.1); }
+
+#options button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+}
+
+#options button.correct {
+  background: #ff4d6d;
+  color: white;
+}
+
+#options button:disabled {
+  opacity: 0.6;
+}
+
+/* 💌 ENVELOPE */
+#envelope {
+  width: 200px;
+  height: 120px;
+  margin: 20px auto;
+  position: relative;
+  cursor: pointer;
+}
+
+.envelope-body {
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 5px;
+}
+
+.envelope-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ff9eb5;
+  clip-path: polygon(0 0, 100% 0, 50% 50%);
+  transform-origin: top;
+  transition: transform 0.6s;
+}
+
+#envelope.open .envelope-top {
+  transform: rotateX(180deg);
+}
+
+#letterPaper {
+  background: #fff6df;    
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: left;
+  font-family: "Courier New", monospace;
+}
+
+/* ❤️ HEARTS */
+#hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.heart {
+  position: absolute;
+  font-size: 18px;
+  animation: floatUp 6s linear;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(100vh); opacity: 0; }
+  to { transform: translateY(-10vh); opacity: 1; }
+}
+/* 📄 LETTER SLIDE ANIMATION */
+#letterPaper {
+  background: #fff6dc;              /* light cream paper */
+  font-family: 'Caveat', cursive;   /* handwritten */
+  font-size: 20px;
+  line-height: 1.9;
+  color: #3b2a2a;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: inset 0 0 12px rgba(0,0,0,0.05);
+}
+
+#typedLetter {
+  white-space: pre-line;
+}
+
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* 📸 MEMORIES GRID */
+.memories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 25px 0;
+}
+
+/* 🖼 PHOTO FRAME – EXACT REEL STYLE */
+.memory {
+  background: #fff8dc;              /* cream paper (image jaisa) */
+  padding: 10px 10px 14px;
+  border-radius: 10px;
+  box-shadow: 0 10px 18px rgba(0,0,0,0.18);
+  transform: rotate(-2deg);
+  border: 1px solid #f2e4c8;
+}
+
+.memory:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+/* PHOTO */
+.memory img {
+  width: 100%;
+  height: 99px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* TEXT UNDER PHOTO */
+.memory p {
+  margin-top: 8px;
+  font-size: 13px;
+  font-style: italic;
+  color: #5a4a3a;
+  text-align: center;
+}
+.memory:hover {
+  transform: scale(1.03) rotate(0deg);
+  transition: 0.3s ease;
+}
+.memories-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #5a2a2a;
+  margin-bottom: 20px;
+}
+/* 💓 HEARTBEAT EFFECT */
+.memories-title {
+  animation: heartbeat 2.2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%   { transform: scale(1); }
+  25%  { transform: scale(1.04); }
+  40%  { transform: scale(1); }
+  60%  { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.memory p {
+  font-family: 'Dancing Script', cursive;
+  font-size: 15px;
+  font-weight: 600;
+  color: #6b3b3b;
+  text-align: center;
+}
+.memory p {
+  letter-spacing: 0.5px;
+}
+
+
+.button1 {
+  border: none;
+  padding: 10px 34px;
+  border-radius: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 12px auto;
+  background: linear-gradient(135deg, #ff3b5c, #ff5f7e);
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 10px 25px rgba(200,0,0,0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button1:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(200,0,0,0.55);
+}
+/* ✨ CARD ENTER ANIMATION */
+.card {
+  animation: cardPop 0.6s ease;
+}
+
+@keyframes cardPop {
+  0% {
+    transform: scale(0.92) translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+button:active {
+  transform: scale(0.95);
+}
+.hidden {
+  display: none;
+}
+
+.card {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* 🌸 FINAL SCROLL PAGE */
+.scroll-card {
+  max-height: 85vh;        /* screen ke andar */
+  overflow-y: auto;        /* scroll enable */
+  padding-bottom: 30px;
+}
+
+/* scrollbar soft look */
+.scroll-card::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll-card::-webkit-scrollbar-thumb {
+  background: #ff8fab;
+  border-radius: 10px;
+}
+
+/* FINAL PAGE STYLES */
+.final-title {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 15px;
+}
+
+.final-media img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 15px 0;
+}
+
+.final-text {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.final-text {
+  font-family: 'Caveat', cursive;
+  color: #4a2a2a;
+  letter-spacing: 0.5px;
+}
+/* 🔴 FINAL OVERLAY ANIMATION */
+#finalOverlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: #ff4d6d;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+#finalOverlay.active {
+  width: 200vmax;
+  height: 200vmax;
+}
+.card {
+  animation: fadeUp 0.6s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* 🌫️ BLUR EFFECT */
+body.blur {
+  filter: blur(6px);
+  transition: filter 0.4s ease;
+}
+/* ❤️ LOVE TEXT ANIMATION */
+.love-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 34px;
+  color: #ff2d55;
+  text-align: center;
+  margin-top: 20px;
+  animation: lovePop 1s ease forwards;
+}
+
+@keyframes lovePop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.login-gif video {
+  width: 100px;
+  border-radius: 18px;
+  margin: 10px auto;
+  display: block;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+.style {
+  font-family: 'Dancing Script', cursive;
+  font-size: 18px;
+  color: #3b2a2a;
+  text-align: center;
+  margin-top: 10px;
+}
+/* 🎬 FINAL PAGE VIDEO FIX */
+#finalPage video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 380px;      /* 👈 yahan size control hoga */
+  border-radius: 16px;
+  object-fit: cover;     /* crop nicely */
+  display: block;
+  margin: 15px auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
