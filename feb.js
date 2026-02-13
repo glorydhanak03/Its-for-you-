@@ -37,12 +37,12 @@ function hideAll() {
 
 /* ================= LOGIN ================= */
 function login() {
-  if (password.value === "akashmahi") {
+  if (password.value === "2/10/2025") {
     hideAll();
     questionBox.classList.remove("hidden");
     startHearts();
   } else {
-    error.innerText = "Wrong password 😢";
+    error.innerText = "Wapas try kro baby 😢";
   }
 }
 
